@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tous mes projets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold text-indigo-600">MonPortfolio</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="text-gray-700 hover:text-indigo-600 transition">Accueil</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 transition">À propos</a>
+                    <a href="index.html#projects" class="text-gray-700 hover:text-indigo-600 transition">Projets</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="index.html#home" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Accueil</a>
+                <a href="index.html#about" class="block py-2 text-gray-700 hover:text-indigo-600 transition">À propos</a>
+                <a href="index.html#projects" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Projets</a>
+                <a href="index.html#contact" class="block py-2 text-gray-700 hover:text-indigo-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Projects Section -->
+    <section class="py-20 bg-gray-50 pt-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-16">Tous mes projets</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application E-commerce</h3>
+                        <p class="text-gray-600 mb-4">Plateforme complète de vente en ligne avec panier et paiement sécurisé.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">Node.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                        <button onclick="openProjectModal('Application E-commerce', 'Plateforme complète de vente en ligne avec panier et paiement sécurisé.', 'https://github.com/username/ecommerce-project', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Réseau Social</h3>
+                        <p class="text-gray-600 mb-4">Plateforme de partage avec système de messagerie et notifications.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">Vue.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">TailwindCSS</span>
+                        </div>
+                        <button onclick="openProjectModal('Réseau Social', 'Plateforme de partage avec système de messagerie et notifications.', 'https://github.com/username/social-network', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application Météo</h3>
+                        <p class="text-gray-600 mb-4">Application météo en temps réel avec prévisions sur 7 jours.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">JavaScript</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">API REST</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">CSS3</span>
+                        </div>
+                        <button onclick="openProjectModal('Application Météo', 'Application météo en temps réel avec prévisions sur 7 jours.', 'https://github.com/username/weather-app', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 4" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Portfolio Artistique</h3>
+                        <p class="text-gray-600 mb-4">Galerie en ligne pour artiste avec système de gestion de contenu.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">WordPress</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">PHP</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">MySQL</span>
+                        </div>
+                        <button onclick="openProjectModal('Portfolio Artistique', 'Galerie en ligne pour artiste avec système de gestion de contenu.', 'https://github.com/username/art-portfolio', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 5" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application de Recettes</h3>
+                        <p class="text-gray-600 mb-4">Base de données de recettes avec fonctionnalité de recherche avancée.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">React Native</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">GraphQL</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">MongoDB</span>
+                        </div>
+                        <button onclick="openProjectModal('Application de Recettes', 'Base de données de recettes avec fonctionnalité de recherche avancée.', 'https://github.com/username/recipe-app', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-md card-hover transition duration-300">
+                    <img src="https://via.placeholder.com/600x400" alt="Project 6" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Blog Technologique</h3>
+                        <p class="text-gray-600 mb-4">Plateforme de blog avec système de commentaires et authentification.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">Next.js</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">TypeScript</span>
+                            <span class="bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs">Prisma</span>
+                        </div>
+                        <button onclick="openProjectModal('Blog Technologique', 'Plateforme de blog avec système de commentaires et authentification.', 'https://github.com/username/tech-blog', 'https://via.placeholder.com/600x400')" class="text-indigo-600 font-medium hover:text-indigo-800 transition">Voir le projet →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="index.html" class="text-2xl font-bold text-white">MonPortfolio</a>
+                    <p class="text-gray-400 mt-2">© 2023 Tous droits réservés</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="index.html#home" class="text-gray-400 hover:text-white transition">Accueil</a>
+                    <a href="index.html#about" class="text-gray-400 hover:text-white transition">À propos</a>
+                    <a href="index.html#projects" class="text-gray-400 hover:text-white transition">Projets</a>
+                    <a href="index.html#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="relative">
+                <button onclick="closeModal()" class="absolute top-4 right-4 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <img id="modalImage" src="" alt="Project" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                    <div>
+                        <h3 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-4"></h3>
+                        <p id="modalDescription" class="text-gray-600 mb-6"></p>
+                        <div class="mb-6">
+                            <h4 class="text-lg font-semibold text-gray-700 mb-2">Technologies utilisées</h4>
+                            <div id="modalTechs" class="flex flex-wrap gap-2"></div>
+                        </div>
+                        <a id="modalLink" href="#" target="_blank" class="inline-flex items-center bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition">
+                            <i data-feather="github" class="mr-2"></i>
+                            Voir sur GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Project modal functions
+        function openProjectModal(title, description, githubLink, imageSrc) {
+            const modal = document.getElementById('projectModal');
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modalLink').href = githubLink;
+            
+            // Get technologies from project card
+            const projectCard = event.target.closest('.bg-white');
+            const techs = projectCard.querySelectorAll('span.bg-indigo-100');
+            const techsContainer = document.getElementById('modalTechs');
+            techsContainer.innerHTML = '';
+            
+            techs.forEach(tech => {
+                const techSpan = document.createElement('span');
+                techSpan.className = 'bg-indigo-100 text-indigo-600 px-2 py-1 rounded text-xs';
+                techSpan.textContent = tech.textContent;
+                techsContainer.appendChild(techSpan);
+            });
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            feather.replace();
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('projectModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Feather icons
+        feather.replace();
+    </script>
+    <style>
+        #projectModal {
+            transition: opacity 0.3s ease;
+        }
+        #projectModal.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</body>
+</html>
